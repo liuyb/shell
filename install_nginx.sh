@@ -7,7 +7,7 @@ if [ $(id -u) != "0" ]; then
 fi
 
 #install dependence
-yum install pcre-devel
+yum -y install pcre-devel
 
 #get nginx
 wget http://nginx.org/download/nginx-1.7.10.tar.gz

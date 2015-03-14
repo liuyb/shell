@@ -7,7 +7,7 @@ if [ $(id -u) != "0" ]; then
 fi
 
 #install dependence
-yum install libxml2-devel openssl openssl-devel curl curl-devel libjpeg-devel libpng-devel freetype-devel
+yum -y install libxml2-devel openssl openssl-devel curl curl-devel libjpeg-devel libpng-devel freetype-devel
 
 #install libmcrypt
 wget http://softlayer.dl.sourceforge.net/sourceforge/mcrypt/libmcrypt-2.5.8.tar.gz
