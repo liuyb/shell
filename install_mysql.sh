@@ -21,8 +21,8 @@ if [ ! -d "$mysqldata" ]; then
 fi
 
 #install cmake & dependence
-yum install gcc gcc-c++ ncurses-devel cmake
-yum install -y perl-Module-Install.noarch
+yum -y install gcc gcc-c++ ncurses-devel cmake
+yum -y install perl-Module-Install.noarch
 
 #get mysql
 wget http://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.23.tar.gz
