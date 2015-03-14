@@ -6,7 +6,7 @@ if [ $(id -u) != "0" ]; then
     exit;
 fi
 
-#install cmake
+#install cmake & dependence
 yum install gcc gcc-c++ ncurses-devel cmake
 yum install -y perl-Module-Install.noarch
 
