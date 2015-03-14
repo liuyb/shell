@@ -40,11 +40,14 @@ chown -R mysql:mysql /data/mysql/
 
 cd /usr/local/services/mysql/
 scripts/mysql_install_db --user=mysql --datadir=/data/mysql
-./bin/mysql_secure_installation
 
 mkdir etc
+if [ ! -d "/etc/my.cnf" ]; then
+    mv /etc/my.cnf /etc/my.cnf.bak
+fi
 cp support-files/my-default.cnf etc/my.cnf
 cp support-files/mysql.server /etc/init.d/
 /etc/init.d/mysql.server start
+./bin/mysql_secure_installation
 
 exit 0
