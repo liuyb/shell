@@ -6,7 +6,19 @@ if [ $(id -u) != "0" ]; then
     exit;
 fi
 
+#install dependence
+yum install libxml2-devel openssl openssl-devel curl curl-devel libjpeg-devel libpng-devel freetype-devel
+
+#install libmcrypt
+wget http://softlayer.dl.sourceforge.net/sourceforge/mcrypt/libmcrypt-2.5.8.tar.gz
+tar -zxvf libmcrypt-2.5.8.tar.gz
+cd libmcrypt-2.5.8
+./configure
+make
+make install
+
 #wget php
+cd ..
 wget http://am1.php.net/distributions/php-5.6.6.tar.gz
 tar -zxvf php-5.6.6.tar.gz
 cd php-5.6.6
