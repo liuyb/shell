@@ -1,9 +1,23 @@
 #!/bin/bash
+services="/usr/local/services"
+mysql="/usr/local/services/mysql"
+data="/data"
+mysqldata="/data/mysql" 
 
 #check runner
 if [ $(id -u) != "0" ]; then
     echo "error: user must be an administrator"
     exit;
+fi
+
+if [ ! -d "$services" ]; then
+    mkdir "$services"
+fi
+if [ ! -d "$data" ]; then
+    mkdir "$data"
+fi
+if [ ! -d "$mysqldata" ]; then
+    mkdir "$mysqldata"
 fi
 
 #install cmake & dependence
